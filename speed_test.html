@@ -53,8 +53,12 @@
 
 		if (window.DeviceMotionEvent) {
 		  window.addEventListener('devicemotion', deviceMotionHandler);
+                	acceleration.innerHTML = "DeviceMotion exists!";
 
 		  //setTimeout(stopJump, 3*1000);
+		} else {
+			acceleration.innerHTML = "DeviceMotion is not Suported!";
+		
 		}
 
         </script>
