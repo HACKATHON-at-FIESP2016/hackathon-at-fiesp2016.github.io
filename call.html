@@ -2,6 +2,8 @@
   <body>
     <script type="text/javascript">
 
+    <table><tr><td><a href="tel:+900300400">Phone: 900 300 400</a></td></tr></table>
+
     var number = '+1234567890';
            navigator.telephony.dial(number).then(
              function(call) {
@@ -9,11 +11,11 @@
                  " is controlled by TelephonyCall object with id: " + call.callId);
                console.log("Now hanging up...");
                call.disconnect();
+               window.open('+1234567890');
              },
              function (err) {
                console.log("Error making the call: " + err.message);
              });
-
 
            // handle the state changes of both received and dialed calls
            function stateHandler(event) {
