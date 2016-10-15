@@ -31,6 +31,9 @@ if (window.DeviceOrientationEvent) {
 	document.querySelector("#alpha").textContent = eventData.alpha;
 
     }, false);
+	
+    console.log("deviceorientation");
+
 } else {
 
 	alert("not device orientation event found");
