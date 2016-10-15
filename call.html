@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <script type="text/javascript">
+
+    var number = '+1234567890';
+           navigator.telephony.dial(number).then(
+             function(call) {
+               console.log("The call to " + number +
+                 " is controlled by TelephonyCall object with id: " + call.callId);
+               console.log("Now hanging up...");
+               call.disconnect();
+             },
+             function (err) {
+               console.log("Error making the call: " + err.message);
+             });
+
+
+           // handle the state changes of both received and dialed calls
+           function stateHandler(event) {
+             var call = event.call;
+             var state = call.state;
+             if (state == 'incoming' || state == 'waiting') {
+               // new TelephonyCall object has been created and added to CallManager
+               // display the dialog for incoming/waiting call
+               // wait for user input: accept, hangup, hold, deflect
+               console.log(state + ' call...');
+             } else if (state == 'dialing') {
+               console.log('Call is dialing');
+             } else if (state == 'alerting') {
+               console.log('Outgoing call is alerting the remote party');
+             } else if (state == 'ringing') {
+               console.log('Incoming call is ringing');
+               // wait for user input: accept, hangup, hold, deflect
+             } else if (state == 'accepted') {
+               console.log('Incoming call is accepted');
+             } else if (state == 'held') {
+               console.log('Call is on hold');
+             } else if (state == 'active') {
+               console.log('Call is active');
+               if (call.conferenceId)
+                 console.log('Call is part of a conference call');
+             } else if(state == 'disconnected') {
+               // the TelephonyCall object has been removed from the CallManager list
+               // update call history
+               console.log('Call disconnected: ' + call.stateReason);
+             }
+           }
+
+           navigator.telephony.addEventListener("callstatechange", stateHandler);
+
+  </script>
+</body>
+</html>
