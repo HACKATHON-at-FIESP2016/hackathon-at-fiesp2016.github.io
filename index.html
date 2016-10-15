@@ -6,6 +6,9 @@
     <script>
 
       function deviceOrientationListener(event) {
+
+	console.log("test");
+
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
 
@@ -28,12 +31,14 @@
         ctx.fillText("Gamma: " + Math.round(event.gamma), 10, 270);
         ctx.beginPath();
         ctx.fillRect(90, 340, 180, event.gamma);
+
       }
 
       if (window.DeviceOrientationEvent) {
         window.addEventListener("deviceorientation", deviceOrientationListener);
       } else {
         alert("Sorry, your browser doesn't support Device Orientation");
+	console.log("doesn't");
       }
 
     </script>
