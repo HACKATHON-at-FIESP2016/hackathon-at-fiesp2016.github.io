@@ -4,7 +4,8 @@
     <canvas id="myCanvas" width="360" height="450" style="border:1px solid #d3d3d3;">
     </canvas>
     <script>
-
+    window.onload = function(){
+	console.log("load");
       function deviceOrientationListener(event) {
 
 	console.log("test");
@@ -40,7 +41,7 @@
         alert("Sorry, your browser doesn't support Device Orientation");
 	console.log("doesn't");
       }
-
+   }
     </script>
   </body>
 </html>
