@@ -1,12 +1,11 @@
-<html>
-<head>
-
 <!DOCTYPE html>
 <html>
   <body>
     <canvas id="myCanvas" width="360" height="450" style="border:1px solid #d3d3d3;">
     </canvas>
     <script>
+      window.onload = function(){
+
       function deviceOrientationListener(event) {
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
@@ -36,6 +35,8 @@
         window.addEventListener("deviceorientation", deviceOrientationListener);
       } else {
         alert("Sorry, your browser doesn't support Device Orientation");
+      }
+
       }
     </script>
   </body>
