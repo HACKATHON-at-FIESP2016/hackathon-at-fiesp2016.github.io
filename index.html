@@ -14,8 +14,10 @@
 
 
 <script>
-let sensor = new AccelerometerSensor({includeGravity: false, frequency: 60});
+var sensor = new AccelerometerSensor({includeGravity: false, frequency: 60});
 sensor.start();
+    
+console.log(sensor);
 
 sensor.onchange = event => {
     console.log("Linear acceleration for an X-axis: " + event.reading.accelerationX);
