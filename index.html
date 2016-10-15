@@ -1,48 +1,34 @@
-<!DOCTYPE html>
 <html>
-  <body>
-    <canvas id="myCanvas" width="360" height="450" style="border:1px solid #d3d3d3;">
-    </canvas>
-    <script>
-    window.onload = function(){
-      console.log("load");
 
-      var deviceOrientationListener = function(event) {
+<body>
 
-	console.log("test");
+<h1>Acceleration</h1>
 
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
+<table>
+<tr>
+<td id="demo1" >Null</td>
+<td id="demo2" >Null</td>
+<td id="demo3" >Null</td>
+</tr>
+</table>
 
-        ctx.clearRect(0, 0, c.width, c.height);
-        ctx.fillStyle = "#FF7777";
-        ctx.font = "14px Verdana";
-        ctx.fillText("Alpha: " + Math.Round(event.alpha), 10, 20);
-        ctx.beginPath();
-        ctx.moveTo(180, 75);
-        ctx.lineTo(210, 75);
-        ctx.arc(180, 75, 60, 0, event.alpha * Math.PI / 180);
-        ctx.fill();
 
-        ctx.fillStyle = "#FF6600";
-        ctx.fillText("Beta: " + Math.round(event.beta), 10, 140);
-        ctx.beginPath();
-        ctx.fillRect(180, 150, event.beta, 90);
+<script>
+let sensor = new AccelerometerSensor({includeGravity: false, frequency: 60});
+sensor.start();
 
-        ctx.fillStyle = "#FF0000";
-        ctx.fillText("Gamma: " + Math.round(event.gamma), 10, 270);
-        ctx.beginPath();
-        ctx.fillRect(90, 340, 180, event.gamma);
+sensor.onchange = event => {
+    console.log("Linear acceleration for an X-axis: " + event.reading.accelerationX);
+    console.log("Linear acceleration for an Y-axis: " + event.reading.accelerationY);
+    console.log("Linear acceleration for an Z-axis: " + event.reading.accelerationZ);
 
-      }
+    document.getElementById("demo1").textContent = event.reading.accelerationX;
+    document.getElementById("demo2").textContent = event.reading.accelerationX;
+    document.getElementById("demo3").textContent = event.reading.accelerationX;
+}
 
-      if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", deviceOrientationListener);
-      } else {
-        alert("Sorry, your browser doesn't support Device Orientation");
-	console.log("doesn't");
-      }
-   }
-    </script>
-  </body>
+sensor.onerror = event => console.log(event.error.name, event.error.message);
+
+</script>
+</body>
 </html>
