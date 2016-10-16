@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SaveMe</title>
+  <title>Aviso</title>
 </head>
 <body>
-  <div id="charging"></div>
-  <div id="level"></div>
-  <div id="dischargingTime"></div>
-  
-  <br><br>
-  <div id="location"></div>
-  
-  <br><br>
-  <a href="tel:193">Ligue agora para os bombeiros</a>
-  
-  <br><br>
-  <h1><div id="aY">1</div></h1>
-  
-  <br><br>
-  <div id="chartContainer" style="height: 0px; width:0px;"></div>
+<div class="popup">
+	<div id="countdown"></div>
+	<p>Você está passando bem?</p>
+	 
+	<input type="button" value="Sim" onClick="yes();"></type>
+	<input type="button" value="Não" onClick="no();"></type>
+</div>
 </body>
 
+<script>
+window.onload = function () {	
+	function countdown( elementName, minutes, seconds ){
+    var element, endTime, hours, mins, msLeft, time;
 
-<!-- Maps API Javascript -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ1uWwd5iochuKqeVIstIgAmZUzB08WjA"></script>
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
 
-<!-- Chart Update API -->
-<script src="js/canvasjs.min.js"></script>
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML = "countdown's over!";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = "Você ainda tem " + (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() ) + " para responder.";
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
 
-<!-- backend -->
-<script src="js/backend.js"></script>
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+}
 
+countdown( "countdown", 0, 10 );
+}
+
+function yes(){
+	alert("sim");
+}
+function no(){
+	alert("nao");
+}
+</script>
 </html>
