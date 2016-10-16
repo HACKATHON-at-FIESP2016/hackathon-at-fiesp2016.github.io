@@ -163,16 +163,16 @@ window.onload = function () {
 		var ValY = 0;	
 		var ValX = 0;	
 		var ValZ = 0;
-		var updateInterval = 10;
-		var dataLength = 5000; // number of dataPoints visible at any point
+		var updateInterval = 100;
+		var dataLength = 500; // number of dataPoints visible at any point
 		
 		var updateChart = function (count) {
 			count = count || 1;
 			// count is number of times loop runs to generate random dataPoints.
 			
-			alert (document.querySelector('#aY').textContent);
-			for (var j = 0; j < count; j++) {	
-				ValY = document.querySelector('#aY').textContent;
+			for (var j = 0; j < count; j++) {
+							
+				ValY = parseFloat(document.querySelector('#aY').textContent);
 				dpsY.push({
 					x: xVal,
 					y: ValY
