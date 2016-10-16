@@ -1,5 +1,8 @@
 var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
+window.onload = function(){
+	alert('pqp2');
+}
 
 window.onchange = function () {
 	alert('pqp');
