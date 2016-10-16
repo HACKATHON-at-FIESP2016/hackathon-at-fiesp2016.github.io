@@ -2,7 +2,6 @@ var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
 
 window.onload = function () {
-	alert("iniciei o backend");
 	
 	//Accelerometer
 	accelerometer();
@@ -59,7 +58,7 @@ function currentPosition(){
 				alert("Estou offline");
 				
 				//update 'label' message
-				document.querySelector('#location').textContent = msg;
+				//document.querySelector('#location').textContent = msg;
 				
 				//create a speech messeger
 				var msgSpeech = new SpeechSynthesisUtterance(msg);
