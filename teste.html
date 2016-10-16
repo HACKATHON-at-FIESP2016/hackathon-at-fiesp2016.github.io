@@ -161,10 +161,8 @@ window.onload = function () {
 		
 		var xVal = 0;
 		var ValY = 0;	
-		var ValX = 0;	
-		var ValZ = 0;
-		var updateInterval = 100;
-		var dataLength = 500; // number of dataPoints visible at any point
+		var updateInterval = 10;
+		var dataLength = 5000; // number of dataPoints visible at any point
 		
 		var updateChart = function (count) {
 			count = count || 1;
@@ -177,33 +175,13 @@ window.onload = function () {
 					x: xVal,
 					y: ValY
 				});
-				/*ValX = document.querySelector('#aX').textContent;
-				alert (ValX);
-				dpsX.push({
-					x: xVal,
-					y: ValX
-				});
-				ValZ = document.querySelector('#aZ').textContent;
-				dpsZ.push({
-					x: xVal,
-					y: ValZ
-				});*/
 				xVal++;
 			};
 			if (dpsY.length > dataLength)
 			{
 				dpsY.shift();				
 			}
-			/*
-			if (dpsX.length > dataLength)
-			{
-				dpsX.shift();				
-			}
-			if (dpsZ.length > dataLength)
-			{
-				dpsZ.shift();				
-			}
-			*/
+			
 			chart.render();		
 
 		};
