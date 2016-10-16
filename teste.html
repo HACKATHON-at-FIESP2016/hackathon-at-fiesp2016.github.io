@@ -138,19 +138,19 @@ window.onload = function () {
 	}
 	
 	function chartUpdater(){
-		var dpsX = []; //dataPoints
-		//var dpsY = []; //dataPoints
+		var dpsY = []; //dataPoints
+		//var dpsX = []; //dataPoints
 		//var dpsZ = []; //dataPoints
 		
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title: {text: "Accelerometer Chart"},
 			data: [{
 				type: "line",
-				dataPoints: dpsX
+				dataPoints: dpsY
 			}/*,
 			{
 				type: "line",
-				dataPoints: dpsY
+				dataPoints: dpsX
 			},
 			{
 				type: "line",
