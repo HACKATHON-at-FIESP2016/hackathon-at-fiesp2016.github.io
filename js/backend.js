@@ -2,7 +2,7 @@ var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
 
 window.onchange = function () {
-	
+	alert('pqp');
 	//Accelerometer
 	accelerometer();
 	
