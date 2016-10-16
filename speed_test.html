@@ -10,12 +10,21 @@
 
         <br>
 
-        <pre class="acceleration"></pre>
+        <pre class="info_acceleration"></pre>
                 
+        <table>
+        	<tr>
+        	<td id="moInterval">Null</td>
+        	<td id="moAccel">Null</td>
+        	<td id="moAccelGrav">Null</td>
+        	<td id="moRotation">Null</td>
+        	</tr>
+        </table>
+
         <script>
         
         var output = document.querySelector('.output');
-        var acceleration = document.querySelector('.acceleration');
+        var info_acceleration = document.querySelector('.info_acceleration');
 
         //var maxX = garden.clientWidth  - ball.clientWidth;
         //var maxY = garden.clientHeight - ball.clientHeight;
@@ -43,9 +52,36 @@
           //ball.style.left = (maxY*y/180 - 10) + "px";
         }
 
-        function deviceMotionHandler(){
+        function deviceMotionHandler(eventData){
 
-			acceleration.innerHTML = "DeviceMotion is Suported!";
+			info_acceleration.innerHTML = "DeviceMotion is Suported!";
+
+			var info, xyz = "[X, Y, Z]";
+
+			// Grab the acceleration from the results
+			var acceleration = eventData.acceleration;
+			info = xyz.replace("X", acceleration.x);
+			info = info.replace("Y", acceleration.y);
+			info = info.replace("Z", acceleration.z);
+			document.getElementById("moAccel").innerHTML = info;
+
+			// Grab the acceleration including gravity from the results
+			var acceleration = eventData.accelerationIncludingGravity;
+			info = xyz.replace("X", acceleration.x);
+			info = info.replace("Y", acceleration.y);
+			info = info.replace("Z", acceleration.z);
+			document.getElementById("moAccelGrav").innerHTML = info;
+
+			// Grab the rotation rate from the results
+			var rotation = eventData.rotationRate;
+			info = xyz.replace("X", rotation.alpha);
+			info = info.replace("Y", rotation.beta);
+			info = info.replace("Z", rotation.gamma);
+			document.getElementById("moRotation").innerHTML = info;
+
+			// // Grab the refresh interval from the results
+			info = eventData.interval;
+			document.getElementById("moInterval").innerHTML = info;   
 
         }
 
@@ -53,12 +89,12 @@
 
 		if (window.DeviceMotionEvent) {
 		  window.addEventListener('devicemotion', deviceMotionHandler);
-                	acceleration.innerHTML = "DeviceMotion exists!";
+
+		  info_acceleration.innerHTML = "DeviceMotion exists!";
 
 		  //setTimeout(stopJump, 3*1000);
 		} else {
-			acceleration.innerHTML = "DeviceMotion is not Suported!";
-		
+			info_acceleration.innerHTML = "DeviceMotion is not Suported!";
 		}
 
         </script>
