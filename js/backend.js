@@ -2,8 +2,7 @@ var aY = 1.2; //force be float
 var currentLocation = "bla"; //force be String
 var count = 0;
 
-window.onchange = function () {
-	
+window.onload = function () {
 	//Accelerometer
 	accelerometer();
 	
