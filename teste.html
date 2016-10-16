@@ -182,7 +182,11 @@ window.onload = function () {
 				dpsY.shift();				
 			}
 			
-			chart.render();		
+			chart.render();
+			
+			if (ValY < -18){
+				alert ("Valor atingiu o teto!!");
+			}
 
 		};
 
