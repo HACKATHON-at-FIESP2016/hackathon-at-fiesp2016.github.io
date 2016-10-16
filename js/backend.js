@@ -20,7 +20,12 @@ function sim(){
 }
 function showModal(){
 	$('#myModal').modal();
-	timeout = window.setTimeout(function () {hideModal();}, 10000);
+	if(timeout = window.setTimeout(function () {hideModal();}, 10000) == 0){
+		alert('sera? sim');
+	}
+	else{
+		alert('nao');
+	}
 }
 
 function currentPosition(){
@@ -149,9 +154,6 @@ function chartUpdater(){
 		//if activate the maximum value from impact
 		if (ValY < -18 && cont < 1){
 			showModal();
-			
-			//currentPosition();
-			cont += 10;
 		}
 
 	};
@@ -166,4 +168,5 @@ function chartUpdater(){
 
 function nao(){
 	currentPosition();
+	cont += 10;
 }
