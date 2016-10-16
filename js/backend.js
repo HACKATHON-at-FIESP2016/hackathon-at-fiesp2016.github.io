@@ -89,10 +89,10 @@ function accelerometer(){
 			aY = event.accelerationIncludingGravity.y*1;
 			
 			//if activate the maximum value from impact
-			if (aY < -18){
+			//if (aY < -18){
 				// ("Valor atingiu o teto!!");
-				currentPosition();
-			}
+			//	currentPosition();
+			//}
 			//document.querySelector('#aY').textContent = aY;
 		}
 	}
