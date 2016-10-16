@@ -1,10 +1,11 @@
 <html>
   <body>
-    <script type="text/javascript">
-
     <table><tr><td><a href="tel:+193">Phone: 900 300 400</a></td></tr></table>
     <a href="tel:193">Ligue agora para os bombeiros</a>
-    var number = '+1234567890';
+
+    <script>
+
+  var number = '+1234567890';
            navigator.telephony.dial(number).then(
              function(call) {
                console.log("The call to " + number +
