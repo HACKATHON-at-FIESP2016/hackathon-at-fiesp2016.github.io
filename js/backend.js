@@ -2,7 +2,7 @@ var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
 
 window.onload = function () {
-	alert("teste");
+	alert("iniciei o backend");
 	
 	//Accelerometer
 	accelerometer();
@@ -137,6 +137,7 @@ function chartUpdater(){
 		chart.render();
 		
 		//if activate the maximum value from impact
+		alert("estou comparando");
 		if (ValY < -18){
 			alert ("Valor atingiu o teto!!");
 			currentPosition();
