@@ -4,8 +4,8 @@
 @font-face {
   font-family: "Material Icons";
   src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url("../icons/MaterialIcons-Regular.ttf");
+       local('MaterialIcons-Regular');
+       
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +13,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 34px;  /* Preferred icon size */
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -21,6 +21,7 @@
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
+  top: 10px;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
