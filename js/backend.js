@@ -16,7 +16,7 @@ function currentPosition(){
 		alert("Geolocation is not supported by your browser");
 	}
 	else{
-		alert("have location");
+		alert("have location");	
 		//have location
 		function success(position) {
 			var latitude  = position.coords.latitude;
