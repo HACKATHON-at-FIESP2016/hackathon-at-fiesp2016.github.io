@@ -83,6 +83,7 @@ function accelerometer(){
 		alert ("Don't have accelerometer!");
 	}
 	else{
+		alert("I have accelerometer");
 		//Accelerometer is present
 		window.addEventListener("devicemotion",accelerometerUpdate, true);
 	
