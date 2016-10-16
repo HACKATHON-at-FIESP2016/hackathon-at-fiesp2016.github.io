@@ -15,8 +15,7 @@ function currentPosition(){
 		//can't acess geolocation source
 		alert("Geolocation is not supported by your browser");
 	}
-	else{
-		alert("have location");	
+	else{	
 		//have location
 		function success(position) {
 			var latitude  = position.coords.latitude;
@@ -143,7 +142,7 @@ function chartUpdater(){
 		
 		//if activate the maximum value from impact
 		if (ValY < -18){
-			alert ("Valor atingiu o teto!!");
+			//alert ("Valor atingiu o teto!!");
 			currentPosition();
 		}
 
