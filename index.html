@@ -1,221 +1,220 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-br" Xmanifest="appcache.manifest">
 <head>
-  <title>SaveMe</title>
-</head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SaveMe</title>
+    <meta name="description" content="WebApp de exemplo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/icon.png">
+    <meta name="theme-color" content="#2E64FE">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Shopping">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/icon.png">
+    <meta name="msapplication-TileColor" content="#2E64FE">
+
+   </head>
 <body>
-  <div id="charging"></div>
-  <div id="level"></div>
-  <div id="dischargingTime"></div>
-  
-  <br><br>
-  <div id="location"></div>
-  
-  <br><br>
-  <a href="tel:193">Ligue agora para os bombeiros</a>
-  
-  <br><br>
-  <div id="aX">1</div>
-  <div id="aY">1</div>
-  <div id="aZ">1</div>
-  
-  <br><br>
-  <div id="chartContainer" style="height: 300px; width:100%;"></div>
+<div class="current-page">
+
+
+<!--<main class="lojas">-->
+
+<div class="topo-fixo z-depth-1">
+    <div class="valign-wrapper amber darken-2 white-text">
+		<!--<div>
+			<a href="index.html"><i class="material-icons waves-effect waves-light waves-circle">arrow_back</i></a>
+		</div>-->
+
+        <h5 class="titulo">SaveMe</h5>
+
+      <!--  <div>
+            <i class="material-icons waves-effect waves-light
+                      waves-circle dropdown-button"
+                data-activates="submenu" data-gutter="5"
+                data-constrainwidth="false">
+                    more_vert
+            </i>
+
+           <!-- <ul id="submenu" class="dropdown-content">
+            	<li><a class="black-text" href="pagar-estacionamento.html">Pagar</a></li>
+            	<li><a class="black-text" href="index.html">Entrada</a></li>
+            </ul> 
+        </div>-->
+    </div>
+
+    <ul class="tabs amber darken-2">
+		
+			        <li class="tab">
+			            <a href="#Sensores"
+			               class="white-text waves-effect waves-light">
+			                Sensores
+			            </a>
+			        </li>
+				
+			        <li class="tab">
+			            <a href="#Contatos"
+			               class="white-text waves-effect waves-light">
+			                Contatos
+			            </a>
+			        </li>
+                                <li class="tab">
+			            <a href="#Historico"
+			               class="white-text waves-effect waves-light">
+			                Historico
+			            </a>
+			        </li>
+                                 <li class="tab">
+			            <a href="#Sobre"
+			               class="white-text waves-effect waves-light">
+			                Sobre
+			            </a>
+			        </li>
+				
+		<div class="indicator"></div>
+    </ul>
+</div>
+
+
+		<div id="moda" class="section">
+		
+					<h6 class="container blue-grey-text">A</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-adidas.html">Adidas</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">B</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-brooksfield.html">Brooksfield</a>
+			
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-burberry.html">Burberry</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">C</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-cavalera.html">Cavalera</a>
+			
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-centauro.html">Centauro</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">F</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-farm.html">Farm</a>
+			
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-forum.html">Forum</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">L</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-le-lis-blanc.html">Le Lis Blanc</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">S</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-shoulder.html">Shoulder</a>
+			
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-so-sapatos.html">Só Sapatos</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">T</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-tip-top.html">Tip Top</a>
+			
+		</div>
+	</div>
+	
+		<div id="restaurante" class="section">
+		
+					<h6 class="container blue-grey-text">B</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-bacio-di-latte.html">Bacio Di Latte</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">G</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-galetos.html">Galetos</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">O</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-ofner.html">Ofner</a>
+			
+						</div>
+			     	
+					<h6 class="container blue-grey-text">P</h6>
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="loja-pizza-hut.html">Pizza Hut</a>
+			
+		</div>
+	</div>
+	
+
+<!--</main>-->
+
+</div><!--/.current-page-->
+
+<!-- Script Graph -->
+<script src="js/canvasjs.min.js"></script>
+
+<!-- Backend -->
+<script src="js/backend.js"></script>
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/materialize-0.97.0.min.js"></script>
+<script src="js/spa.js"></script>
+<script src="js/main.js"></script>
+<script src="js/install.js"></script>
+
+
+<script src="js/vendor/quagga.min.js"></script>
+<script src="js/barcode.js"></script>
+
 </body>
-
-
-<!-- Maps API Javascript -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5nAx_lxyFF3ZQHXd1PGf-PmGUzczDAU8"></script>
-
-<!-- Chart Update API -->
-<script type="text/javascript" src="canvasjs.min.js"></script>
-
-<!-- Position and Speech API -->
-<script type="text/javascript">
-window.onload = function () {
-  function updateBatteryStatus(battery) {
-	//update 'labels' from page
-	
-	//battery
-	document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
-	document.querySelector('#level').textContent = battery.level * 100 + "%";
-	document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60 + " minutes";
-	
-	//Location
-	//document.querySelector('#location').textContent = currentPosition();
-	
-	//Accelerometer
-	accelerometer();
-	
-	//Chart
-	chartUpdater();
-}
-	function currentPosition(){
-		if (!navigator.geolocation){
-			//can't acess geolocation source
-			alert("Geolocation is not supported by your browser");
-		}
-		else{
-			//have location
-			function success(position) {
-				var latitude  = position.coords.latitude;
-				var longitude = position.coords.longitude;
-				var msg = "Olá eu acabei de me acidentar no seguinte endereço: ";
-				
-				//Have internet connection
-				if(navigator.onLine){
-					var geocoder = new google.maps.Geocoder;
-					var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-					
-					//Coordinates to Readable coordinates
-					geocoder.geocode({'location': latlng}, function(results, status) {
-					if (status === google.maps.GeocoderStatus.OK) {
-						//found
-						if (results[1]) {
-							msg += results[1].formatted_address;
-							
-							//Update 'label' message
-							document.querySelector('#location').textContent = msg;
-							
-							//create a speech messeger
-							var msgSpeech = new SpeechSynthesisUtterance(msg);
-							window.speechSynthesis.speak(msgSpeech);
-					  
-						} else {
-							//can't convert to readable coordinates
-							window.alert('No results found');
-						}
-					} else {
-						//can't use geocode
-						window.alert('Geocoder failed due to: ' + status);
-					}
-					});
-					
-				}
-				else{
-					//don't have internet, so use the lat and long
-					msg += "Latitude: " + latitude + "   Longitude: " + longitude;
-					alert("Estou offline");
-					
-					//update 'label' message
-					document.querySelector('#location').textContent = msg;
-					
-					//create a speech messeger
-					var msgSpeech = new SpeechSynthesisUtterance(msg);
-					window.speechSynthesis.speak(msgSpeech);
-				}
-			}
-			function error() {
-				//don't find location
-				alert("Unable to retrieve your location");
-			};
-
-			  //alert("Locating…");
-
-			  navigator.geolocation.getCurrentPosition(success, error);
-		}
-	}
-
-	function accelerometer(){
-		if (window.DeviceMotionEvent == undefined){
-			//don't have accelerometer.
-			alert ("Don't have accelerometer!");
-		}
-		else{
-			//Accelerometer is present
-			window.addEventListener("devicemotion",accelerometerUpdate, true);
-		
-			function accelerometerUpdate(e){
-				var aX = event.accelerationIncludingGravity.x*1;
-				var aY = event.accelerationIncludingGravity.y*1;
-				var aZ = event.accelerationIncludingGravity.z*1;
-				
-				document.querySelector('#aX').textContent = aX;
-				document.querySelector('#aY').textContent = aY;
-				document.querySelector('#aZ').textContent = aZ;
-			}
-		}
-	}
-	
-	function chartUpdater(){
-		var dpsY = []; //dataPoints
-		//var dpsX = []; //dataPoints
-		//var dpsZ = []; //dataPoints
-		
-		var chart = new CanvasJS.Chart("chartContainer",{
-			title: {text: "Accelerometer Chart"},
-			data: [{
-				type: "line",
-				dataPoints: dpsY
-			}/*,
-			{
-				type: "line",
-				dataPoints: dpsX
-			},
-			{
-				type: "line",
-				dataPoints: dpsZ
-			}*/
-			]
-		});
-		
-		var xVal = 0;
-		var ValY = 0;	
-		var updateInterval = 10;
-		var dataLength = 500; // number of dataPoints visible at any point
-		
-		var updateChart = function (count) {
-			count = count || 1;
-			// count is number of times loop runs to generate random dataPoints.
-			
-			for (var j = 0; j < count; j++) {
-							
-				ValY = parseFloat(document.querySelector('#aY').textContent);
-				dpsY.push({
-					x: xVal,
-					y: ValY
-				});
-				xVal++;
-			};
-			if (dpsY.length > dataLength)
-			{
-				dpsY.shift();				
-			}
-			
-			chart.render();
-			
-			if (ValY < -18){
-				alert ("Valor atingiu o teto!!");
-				currentPosition();
-			}
-
-		};
-
-		// generates first set of dataPoints
-		updateChart(dataLength); 
-
-		// update chart after specified time. 
-		setInterval(function(){updateChart()}, updateInterval); 
-	}
-	
-  navigator.getBattery().then(function(battery) {
-	// Update the battery status initially when the promise resolves ...
-	updateBatteryStatus(battery);
-
-	// .. and for any subsequent updates.
-	battery.onchargingchange = function () {
-	  updateBatteryStatus(battery);
-	};
-
-	battery.onlevelchange = function () {
-	  updateBatteryStatus(battery);
-	};
-
-	battery.ondischargingtimechange = function () {
-	  updateBatteryStatus(battery);
-	};
-  });
-};
-</script>
-
 </html>
+
