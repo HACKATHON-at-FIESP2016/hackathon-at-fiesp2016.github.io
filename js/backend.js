@@ -36,7 +36,6 @@ function currentPosition(){
 						
 						//Update 'label' message
 						//currentLocation = msg;
-						alert(msg);
 						
 						//create a speech messeger
 						var msgSpeech = new SpeechSynthesisUtterance(msg);
@@ -92,7 +91,7 @@ function accelerometer(){
 			//if activate the maximum value from impact
 			if (aY < -18){
 				alert ("Valor atingiu o teto!!");
-				//currentPosition();
+				currentPosition();
 			}
 			//document.querySelector('#aY').textContent = aY;
 		}
