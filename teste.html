@@ -1,92 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-  <script>
-    window.onload = function () {
-      function updateBatteryStatus(battery) {
-        document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
-        document.querySelector('#level').textContent = battery.level * 100 + "%";
-        document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60 + " minutes";
-		document.querySelector('#location').textContent = currentPosition();
-		
-		 
-		
-	}
-		function currentPosition(){
-			if (!navigator.geolocation){
-				alert("Geolocation is not supported by your browser");
-			}
-			else{
-				function success(position) {
-					var latitude  = position.coords.latitude;
-					var longitude = position.coords.longitude;
-					var msg = "Olá eu acabei de me acidentar no seguinte endereço: ";
-					if(navigator.onLine){
-						var geocoder = new google.maps.Geocoder;
-						
-						var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-						geocoder.geocode({'location': latlng}, function(results, status) {
-						if (status === google.maps.GeocoderStatus.OK) {
-						  if (results[1]) {
-							msg += results[1].formatted_address;
-							document.querySelector('#location').textContent = msg;
-						  
-							var msgSpeech = new SpeechSynthesisUtterance(msg);
-							window.speechSynthesis.speak(msgSpeech);
-						  
-						  } else {
-							window.alert('No results found');
-						  }
-						} else {
-						  window.alert('Geocoder failed due to: ' + status);
-						}
-						});
-						
-					}
-					else{
-						msg += "Latitude: " + latitude + "   Longitude: " + longitude;
-						alert("Estou offline");
-						document.querySelector('#location').textContent = msg;
-						var msgSpeech = new SpeechSynthesisUtterance(msg);
-						window.speechSynthesis.speak(msgSpeech);
-					}
-				}
-				function error() {
-					alert("Unable to retrieve your location");
-				};
-
-				  //alert("Locating…");
-
-				  navigator.geolocation.getCurrentPosition(success, error);
-			}
-			
-		}
-
-      navigator.getBattery().then(function(battery) {
-        // Update the battery status initially when the promise resolves ...
-        updateBatteryStatus(battery);
-
-        // .. and for any subsequent updates.
-        battery.onchargingchange = function () {
-          updateBatteryStatus(battery);
-        };
-
-        battery.onlevelchange = function () {
-          updateBatteryStatus(battery);
-        };
-
-        battery.ondischargingtimechange = function () {
-          updateBatteryStatus(battery);
-        };
-      });
-    };
-  </script>
   
   
-<!-- Maps API Javascript -->
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5nAx_lxyFF3ZQHXd1PGf-PmGUzczDAU8&sensor=false&libraries=places""></script>
--->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5nAx_lxyFF3ZQHXd1PGf-PmGUzczDAU8"></script>
 
 <head>
   <title>SaveMe</title>
@@ -100,4 +16,106 @@
   <br><br>
   <a href="tel:193">Ligue agora para os bombeiros</a>
 </body>
+
+
+<!-- Maps API Javascript -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5nAx_lxyFF3ZQHXd1PGf-PmGUzczDAU8"></script>
+
+<!-- Position and Speech API -->
+<script type="text/javascript">
+window.onload = function () {
+  function updateBatteryStatus(battery) {
+	//update 'labels' from page
+	document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
+	document.querySelector('#level').textContent = battery.level * 100 + "%";
+	document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60 + " minutes";
+	document.querySelector('#location').textContent = currentPosition();
+}
+	function currentPosition(){
+		if (!navigator.geolocation){
+			//can't acess geolocation source
+			alert("Geolocation is not supported by your browser");
+		}
+		else{
+			//have location
+			function success(position) {
+				var latitude  = position.coords.latitude;
+				var longitude = position.coords.longitude;
+				var msg = "Olá eu acabei de me acidentar no seguinte endereço: ";
+				
+				//Have internet connection
+				if(navigator.onLine){
+					var geocoder = new google.maps.Geocoder;
+					var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+					
+					//Coordinates to Readable coordinates
+					geocoder.geocode({'location': latlng}, function(results, status) {
+					if (status === google.maps.GeocoderStatus.OK) {
+						//found
+						if (results[1]) {
+							msg += results[1].formatted_address;
+							
+							//Update 'label' message
+							document.querySelector('#location').textContent = msg;
+							
+							//create a speech messeger
+							var msgSpeech = new SpeechSynthesisUtterance(msg);
+							window.speechSynthesis.speak(msgSpeech);
+					  
+						} else {
+							//can't convert to readable coordinates
+							window.alert('No results found');
+						}
+					} else {
+						//can't use geocode
+						window.alert('Geocoder failed due to: ' + status);
+					}
+					});
+					
+				}
+				else{
+					//don't have internet, so use the lat and long
+					msg += "Latitude: " + latitude + "   Longitude: " + longitude;
+					alert("Estou offline");
+					
+					//update 'label' message
+					document.querySelector('#location').textContent = msg;
+					
+					//create a speech messeger
+					var msgSpeech = new SpeechSynthesisUtterance(msg);
+					window.speechSynthesis.speak(msgSpeech);
+				}
+			}
+			function error() {
+				//don't find location
+				alert("Unable to retrieve your location");
+			};
+
+			  //alert("Locating…");
+
+			  navigator.geolocation.getCurrentPosition(success, error);
+		}
+		
+	}
+
+  navigator.getBattery().then(function(battery) {
+	// Update the battery status initially when the promise resolves ...
+	updateBatteryStatus(battery);
+
+	// .. and for any subsequent updates.
+	battery.onchargingchange = function () {
+	  updateBatteryStatus(battery);
+	};
+
+	battery.onlevelchange = function () {
+	  updateBatteryStatus(battery);
+	};
+
+	battery.ondischargingtimechange = function () {
+	  updateBatteryStatus(battery);
+	};
+  });
+};
+</script>
+
 </html>
