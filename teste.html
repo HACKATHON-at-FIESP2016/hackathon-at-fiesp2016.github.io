@@ -131,8 +131,8 @@ window.onload = function () {
 				var aZ = event.accelerationIncludingGravity.z*1;
 				
 				document.querySelector('#aX').textContent = aX;
-				document.querySelector('#aY').textContent = "aY: " + aY;
-				document.querySelector('#aZ').textContent = "aZ: " + aZ;
+				document.querySelector('#aY').textContent = aY;
+				document.querySelector('#aZ').textContent = aZ;
 			}
 		}
 	}
@@ -159,9 +159,9 @@ window.onload = function () {
 		});
 		
 		var xVal = 0;
-		var ValY = 100;	
-		var ValX = 100;	
-		var ValZ = 100;
+		var ValY = 0;	
+		var ValX = 0;	
+		var ValZ = 0;
 		var updateInterval = 10;
 		var dataLength = 5000; // number of dataPoints visible at any point
 		
