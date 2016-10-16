@@ -36,6 +36,7 @@ function currentPosition(){
 						
 						//Update 'label' message
 						//currentLocation = msg;
+						alert(msg);
 						
 						//create a speech messeger
 						var msgSpeech = new SpeechSynthesisUtterance(msg);
