@@ -11,6 +11,21 @@ window.onload = function () {
 	chartUpdater();
 }
 
+
+function nao(){
+	currentPosition();
+}
+function sim(){
+	hideModal();
+}
+function showModal(){
+	$('#myModal').modal();
+	timeout = window.setTimeout(function () {hideModal();}, 10000);
+}
+function hideModal(){
+	$('#myModal').modal("hide");
+}
+
 function currentPosition(){
 	if (!navigator.geolocation){
 		//can't acess geolocation source
@@ -63,7 +78,6 @@ function currentPosition(){
 				
 				//create a speech messeger
 				var msgSpeech = new SpeechSynthesisUtterance(msg);
-				window.speechSynthesis.speak(msgSpeech);
 				window.speechSynthesis.speak(msgSpeech);
 			}
 		}
@@ -140,7 +154,7 @@ function chartUpdater(){
 			showModal();
 			
 			//currentPosition();
-			cont += 1;
+			cont += 10;
 		}
 
 	};
@@ -150,17 +164,4 @@ function chartUpdater(){
 
 	// update chart after specified time. 
 	setInterval(function(){updateChart()}, updateInterval); 
-}
-function nao(){
-	currentPosition();
-}
-function sim(){
-	hideModal();
-}
-function showModal(){
-	$('#myModal').modal();
-	timeout = window.setTimeout(function () {hideModal();}, 10000);
-}
-function hideModal(){
-	$('#myModal').modal("hide");
 }
