@@ -2,14 +2,6 @@ var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
 var cont = 0;
 
-window.onload = function () {
-	
-	//Accelerometer
-	accelerometer();
-	
-	//Chart
-	chartUpdater();
-}
 window.onchange = function () {
 	
 	//Accelerometer
