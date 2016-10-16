@@ -78,6 +78,7 @@ function currentPosition(){
 }
 
 function accelerometer(){
+	alert ("entrei");
 	if (window.DeviceMotionEvent == undefined){
 		//don't have accelerometer.
 		alert ("Don't have accelerometer!");
