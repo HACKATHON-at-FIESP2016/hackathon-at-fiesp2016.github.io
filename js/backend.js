@@ -19,12 +19,7 @@ function sim(){
 }
 function showModal(){
 	$('#myModal').modal();
-	if(timeout = window.setTimeout(function () {hideModal();}, 10000) == 0){
-		alert('sera? sim');
-	}
-	else{
-		alert('nao');
-	}
+	timeout = window.setTimeout(function () {hideModal();}, 10000);
 }
 
 function currentPosition(){
