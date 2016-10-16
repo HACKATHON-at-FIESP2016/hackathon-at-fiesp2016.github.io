@@ -10,7 +10,14 @@ window.onload = function () {
 	//Chart
 	chartUpdater();
 }
-
+window.onchange = function () {
+	
+	//Accelerometer
+	accelerometer();
+	
+	//Chart
+	chartUpdater();
+}
 
 function hideModal(){
 	$('#myModal').modal("hide");
