@@ -12,8 +12,8 @@ window.onload = function () {
 }
 
 
-function nao(){
-	currentPosition();
+function hideModal(){
+	$('#myModal').modal("hide");
 }
 function sim(){
 	hideModal();
@@ -21,9 +21,6 @@ function sim(){
 function showModal(){
 	$('#myModal').modal();
 	timeout = window.setTimeout(function () {hideModal();}, 10000);
-}
-function hideModal(){
-	$('#myModal').modal("hide");
 }
 
 function currentPosition(){
@@ -59,11 +56,11 @@ function currentPosition(){
 				  
 					} else {
 						//can't convert to readable coordinates
-						'window.alert('No results found');
+						//window.alert('No results found');
 					}
 				} else {
 					//can't use geocode
-					'window.alert('Geocoder failed due to: ' + status);
+					//window.alert('Geocoder failed due to: ' + status);
 				}
 				});
 				
@@ -164,4 +161,9 @@ function chartUpdater(){
 
 	// update chart after specified time. 
 	setInterval(function(){updateChart()}, updateInterval); 
+}
+
+
+function nao(){
+	currentPosition();
 }
