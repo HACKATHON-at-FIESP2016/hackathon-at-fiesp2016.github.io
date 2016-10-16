@@ -8,7 +8,7 @@ window.onload = function () {
 	accelerometer();
 	
 	//Chart
-	//chartUpdater();
+	chartUpdater();
 }
 
 function currentPosition(){
@@ -78,13 +78,11 @@ function currentPosition(){
 }
 
 function accelerometer(){
-	alert ("entrei");
 	if (window.DeviceMotionEvent == undefined){
 		//don't have accelerometer.
 		alert ("Don't have accelerometer!");
 	}
 	else{
-		alert("I have accelerometer");
 		//Accelerometer is present
 		window.addEventListener("devicemotion",accelerometerUpdate, true);
 	
