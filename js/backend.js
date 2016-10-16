@@ -1,5 +1,6 @@
 var aY = 1.2; //force be float
 var currentLocation = "bla" //force be String
+var cont = 0;
 
 window.onload = function () {
 	
@@ -43,11 +44,11 @@ function currentPosition(){
 				  
 					} else {
 						//can't convert to readable coordinates
-						window.alert('No results found');
+						'window.alert('No results found');
 					}
 				} else {
 					//can't use geocode
-					window.alert('Geocoder failed due to: ' + status);
+					'window.alert('Geocoder failed due to: ' + status);
 				}
 				});
 				
@@ -62,6 +63,7 @@ function currentPosition(){
 				
 				//create a speech messeger
 				var msgSpeech = new SpeechSynthesisUtterance(msg);
+				window.speechSynthesis.speak(msgSpeech);
 				window.speechSynthesis.speak(msgSpeech);
 			}
 		}
@@ -134,8 +136,11 @@ function chartUpdater(){
 		chart.render();
 		
 		//if activate the maximum value from impact
-		if (ValY < -18){
-			currentPosition();
+		if (ValY < -18 && cont < 1){
+			showModal();
+			
+			//currentPosition();
+			cont += 1;
 		}
 
 	};
@@ -145,4 +150,17 @@ function chartUpdater(){
 
 	// update chart after specified time. 
 	setInterval(function(){updateChart()}, updateInterval); 
+}
+function nao(){
+	currentPosition();
+}
+function sim(){
+	hideModal();
+}
+function showModal(){
+	$('#myModal').modal();
+	timeout = window.setTimeout(function () {hideModal();}, 10000);
+}
+function hideModal(){
+	$('#myModal').modal("hide");
 }
