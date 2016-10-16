@@ -138,36 +138,66 @@ window.onload = function () {
 	}
 	
 	function chartUpdater(){
-		var dps = []; //dataPoints
+		var dpsX = []; //dataPoints
+		var dpsY = []; //dataPoints
+		var dpsZ = []; //dataPoints
 		
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title: {text: "Accelerometer Chart"},
 			data: [{
 				type: "line",
-				dataPoints: dps
+				dataPoints: dpsX
+			},
+			{
+				type: "line",
+				dataPoints: dpsY
+			},
+			{
+				type: "line",
+				dataPoints: dpsZ
 			}]
 		});
 		
 		var xVal = 0;
-		var yVal = 100;	
-		var updateInterval = 100;
-		var dataLength = 500; // number of dataPoints visible at any point
+		var ValY = 100;	
+		var ValX = 100;	
+		var ValZ = 100;
+		var updateInterval = 10;
+		var dataLength = 5000; // number of dataPoints visible at any point
 		
 		var updateChart = function (count) {
 			count = count || 1;
 			// count is number of times loop runs to generate random dataPoints.
 			
 			for (var j = 0; j < count; j++) {	
-				yVal = document.querySelector('#aX').textContent;
+				ValY = document.querySelector('#aY').textContent;
 				dps.push({
 					x: xVal,
-					y: yVal
+					y: ValY
+				});
+				ValX = document.querySelector('#aX').textContent;
+				dps.push({
+					x: xVal,
+					y: ValX
+				});
+				ValZ = document.querySelector('#aZ').textContent;
+				dps.push({
+					x: xVal,
+					y: ValZ
 				});
 				xVal++;
 			};
-			if (dps.length > dataLength)
+			if (dpsY.length > dataLength)
 			{
-				dps.shift();				
+				dpsY.shift();				
+			}
+			if (dpsX.length > dataLength)
+			{
+				dpsX.shift();				
+			}
+			if (dpsZ.length > dataLength)
+			{
+				dpsZ.shift();				
 			}
 			
 			chart.render();		
