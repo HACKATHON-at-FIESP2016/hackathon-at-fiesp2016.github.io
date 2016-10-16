@@ -139,15 +139,15 @@ window.onload = function () {
 	
 	function chartUpdater(){
 		var dpsX = []; //dataPoints
-		var dpsY = []; //dataPoints
-		var dpsZ = []; //dataPoints
+		//var dpsY = []; //dataPoints
+		//var dpsZ = []; //dataPoints
 		
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title: {text: "Accelerometer Chart"},
 			data: [{
 				type: "line",
 				dataPoints: dpsX
-			},
+			}/*,
 			{
 				type: "line",
 				dataPoints: dpsY
@@ -155,7 +155,8 @@ window.onload = function () {
 			{
 				type: "line",
 				dataPoints: dpsZ
-			}]
+			}*/
+			]
 		});
 		
 		var xVal = 0;
@@ -175,7 +176,8 @@ window.onload = function () {
 					x: xVal,
 					y: ValY
 				});
-				ValX = document.querySelector('#aX').textContent;
+				/*ValX = document.querySelector('#aX').textContent;
+				alert (ValX);
 				dpsX.push({
 					x: xVal,
 					y: ValX
@@ -184,13 +186,14 @@ window.onload = function () {
 				dpsZ.push({
 					x: xVal,
 					y: ValZ
-				});
+				});*/
 				xVal++;
 			};
 			if (dpsY.length > dataLength)
 			{
 				dpsY.shift();				
 			}
+			/*
 			if (dpsX.length > dataLength)
 			{
 				dpsX.shift();				
@@ -199,7 +202,7 @@ window.onload = function () {
 			{
 				dpsZ.shift();				
 			}
-			
+			*/
 			chart.render();		
 
 		};
