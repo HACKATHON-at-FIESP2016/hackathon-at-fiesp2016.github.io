@@ -152,7 +152,7 @@ function chartUpdater(){
 		chart.render();
 		
 		//if activate the maximum value from impact
-		if (ValY < -18 && cont < 1){
+		if (ValY < -18){
 			showModal();
 		}
 
@@ -168,5 +168,6 @@ function chartUpdater(){
 
 function nao(){
 	currentPosition();
+	
 	cont += 10;
 }
