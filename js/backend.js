@@ -137,7 +137,6 @@ function chartUpdater(){
 		chart.render();
 		
 		//if activate the maximum value from impact
-		alert("estou comparando");
 		if (ValY < -18){
 			alert ("Valor atingiu o teto!!");
 			currentPosition();
