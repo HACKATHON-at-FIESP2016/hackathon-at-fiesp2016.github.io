@@ -16,6 +16,7 @@ function currentPosition(){
 		alert("Geolocation is not supported by your browser");
 	}
 	else{
+		alert("have location");
 		//have location
 		function success(position) {
 			var latitude  = position.coords.latitude;
@@ -90,7 +91,7 @@ function accelerometer(){
 			
 			//if activate the maximum value from impact
 			if (aY < -18){
-				alert ("Valor atingiu o teto!!");
+				// ("Valor atingiu o teto!!");
 				currentPosition();
 			}
 			//document.querySelector('#aY').textContent = aY;
