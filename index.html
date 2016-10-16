@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-br" Xmanifest="appcache.manifest">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>99Hero</title>
+    <meta name="description" content="WebApp de exemplo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main1.css">
+    
+    <!--<link rel="manifest" href="manifest.json">-->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/icon.png">
+    <meta name="theme-color" content="#2E64FE">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Shopping">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/icon.png">
+    <meta name="msapplication-TileColor" content="#2E64FE">
+
+   </head>
+<body>
+ <div id="location" style="visibility: hidden;"></div>
+ <div id="chartContainer" style="visibility: hidden;"></div>
+ 
+ <!-- Pop up tempo -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Aviso</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>Você está passando bem?</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal" onClick="sim();">Sim</button>
+			<button type="button" class="btn btn-primary" onClick="nao();">Não</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+ 
+ 
+<div class="current-page">
+
+
+<!--<main class="lojas">-->
+
+<div class="topo-fixo z-depth-1">
+    <div class="valign-wrapper amber darken-2 white-text">
+		
+
+        <h5 class="titulo">99Hero</h5>
+    </div>
+        <div>
+      <!--  <div>
+            <i class="material-icons waves-effect waves-light
+                      waves-circle dropdown-button"
+                data-activates="submenu" data-gutter="5"
+                data-constrainwidth="false">
+                    more_vert
+            </i>
+
+            <ul id="submenu" class="dropdown-content">
+            	<li><a class="black-text" href="pagar-estacionamento.html">Pagar</a></li>
+            	<li><a class="black-text" href="index.html">Entrada</a></li>
+            </ul> -->
+       
+
+    <ul class="tabs amber darken-2">
+		
+			        <li class="tab">
+			            <a href="#Sensores"
+			               class="white-text waves-effect waves-light">
+			                Sensores
+			            </a>
+			        </li>
+				
+			        <li class="tab">
+			            <a href="#Contatos"
+			               class="white-text waves-effect waves-light">
+			                Contatos
+			            </a>
+			        </li>
+                                 <li class="tab">
+			            <a href="#Sobre"
+			               class="white-text waves-effect waves-light">
+			                Sobre
+			            </a>
+			        </li>
+				
+		
+    </ul>
+
+    </div>
+<div>
+
+		<div id="Sensores" class="section">
+		
+					
+					<div class="collection">
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="celular.html">Celular</a>
+			
+					
+		     	
+				<a class="collection-item waves-effect black-text" 
+				   href="">Carro</a>
+			
+				<a class="collection-item waves-effect black-text" 
+				   href="">Pulseira</a>
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large waves-effect waves-light amber darken-4"
+                       href="">
+                        <i class="material-icons">+</i>
+                    </a>
+                </div>
+			
+                                            
+                                            
+                                            
+						</div>
+                    
+			     	
+				
+	</div>
+    
+    
+     <div id="Contatos" class="section">
+        <div class="collection">
+            <a class="collection-item waves-effect black-text" 
+				   href="">Pai</a>
+            <a class="collection-item waves-effect black-text" 
+				   href="">Esposa</a>
+            <a class="collection-item waves-effect black-text" 
+				   href="">Tio</a>
+            <a class="collection-item waves-effect black-text" 
+				   href="">Irmao</a>
+            
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large waves-effect waves-light amber darken-4"
+                   href="">
+                    <i class="material-icons">+</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+     <div id="Sobre" class="section" style="text-align: justify; text-justify: inter-word; padding: 1cm;">
+         <p>A ideia nasceu em um hackathon promovido pela FIESP em 2016.</p>
+         <p>O aplicativo tem como objetivo avisar ao socorro e contatos de interesse sobre um acidente, principalmente 
+            quando a vítima está inconsiente ou desacordada.</p>
+         <p>É possível adiquirir um dipositivo externo para fazer o envio dos dados da colisão.</p>
+    </div>
+	
+</div>
+    </div>
+</div>
+<!--</main>-->
+
+<!--/.current-page-->
+
+<script src="js/vendor/materialize-0.97.0.min.js"></script>
+
+<!-- Maps API Javascript -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ1uWwd5iochuKqeVIstIgAmZUzB08WjA"></script>
+
+<!-- Chart Update API -->
+<script src="js/canvasjs.min.js"></script>
+
+<!-- backend -->
+<script src="js/backend.js"></script>
+
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+ <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</body>
+</html>
+
