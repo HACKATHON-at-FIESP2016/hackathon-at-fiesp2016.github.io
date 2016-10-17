@@ -1,4 +1,4 @@
-var aY = 1.2; //force be float
+var aY = 0.0; //force be float and start with zero
 var currentLocation = "bla"; //force be String
 var count = 0;
 
